@@ -21,3 +21,9 @@ body {
     overflow-y: auto;
     padding: 20px;
 }
+
+.leaflet-div-icon {
+  background-color: red;
+  height:50px;
+
+}

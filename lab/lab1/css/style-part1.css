@@ -4,27 +4,34 @@ body {
 }
 
 .map {
-    background-color: #eee;
-    position: absolute;
-    left: 400px;
-    right: 0;
-    bottom: 0;
-    top: 0;
+background-color: #eee;
+position: absolute;
+right: 400px;
+left: 0;
+bottom: 0;
+top: 50px;
 }
 
 .sidebar {
     overflow-y: auto; /* This line allows the sidebar to scroll when there is
-                         a lot of content in it */
-    background-color: #ccc;
-    position: absolute;
-    left: 0;
-    width: 400px;
-    bottom: 0;
-    top: 0;
-}
+                       a lot of content in it */
+background-color: #ccc;
+position: absolute;
+right: 0;
+width: 400px;
+bottom: 0;
+top: 50px;
+z-index: 20;  /*decide which layer on top; the larger the number
+              the more front */
+
 
 .header {
-  background-color: #000;
-  color: #fff;
-  position: absolute;
+background-color: #000;
+color: #fff;
+position: absolute;
+z-index: 200;/*decide which layer on top; the larger the number
+                 the more front */
+width: 100%;
+height: 50px;
+padding: 20px;
 }

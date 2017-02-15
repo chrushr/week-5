@@ -169,5 +169,105 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 // the function passed to `ready` until the HTML document is fully loaded and all scripts have
 // been interpreted. It is, therefore, an example of asynchronous behavior.
 $(document).ready(function() {
-  // Do your stuff here
+
+// TASK 1
+  $('#text-label2').text('Name')
+
+$('#text-label1').text('Person')
+
+$('#text-label3').text('Address')
+
+$('#number-label').text('Age')
+
+$('#checkbox-label1').text('Employed?')
+
+$('#checkbox-label2').text('Married?')
+
+$('#color-label').text('Favorite Color')
+
+//TASK 2
+$('#text-input1').val('Person')
+
+$('#text-input2').val('Chris')
+
+$('#text-input3').val('1209 Chesnut Street')
+
+$('#numeric-input').val('30')
+
+$('#cbox-input1').attr('disabled', false)
+
+$('#cbox-input1').prop('disabled',false);
+$("#cbox-input2").removeAttr('disabled');
+$('#color-input').val('#4decb3');
+$('#number-label').text
+
+// TASK 3
+console.log( $('#text-label1').text())
+var key=$('#text-label1').text()
+var obj = {}
+  obj[ $('#text-label1').text()]=$('#text-input1').val()
+  obj[ $('#text-label2').text()]=$('#text-input2').val()
+  obj[ $('#text-label3').text()]=$('#text-input3').val()
+  obj[ $('#number-label').text()]=$('#numeric-input').val()
+  obj[ $('#checkbox-label1').text()]='depends'
+  obj[ $('#checkbox-label2').text()]='depends'
+  obj[ $('#color-label').text()]=$('#color-input').val()
+      // name: $('#text-input2').val(),
+      //   $('#text-label3').text(): $('#text-input3').val(),
+      //   $('#number-label').text():$('#numeric-input').val()
+
+//Task 4
+      $('#text-input1').prop('disabled',false);
+      $('#text-input2').prop('disabled',false);
+      $('#text-input3').prop('disabled',false);
+      $('#cbox-input1').prop('disabled',false);
+      $('#numeric-input').prop('disabled',false);
+      $("#cbox-input2").removeAttr('disabled');
+
+
+//Task 5
+
+$( 'button' ).click(function() {
+  console.log( obj );
 });
+
+console.log(obj);
+
+
+//Task 6
+obj['lat']=39.95;
+obj['lng']=-75.16;
+obj['color']= '#334455';
+$( 'button' ).click(function() {
+  var marker=L.circleMarker( [obj.lat, obj.lng], obj.color);
+  marker.addTo(map);
+  marker.bindPopup("<li> lat: </li>" +obj.lat+ " <li>lng:</li>" +obj.lng).openPopup();
+});
+
+//*********question: inside bindPopup(), why can't put obj.Name... How to convert object to string.
+//also, how to make the popup content a list rather than a single line?
+
+
+
+//Task 7   Set default value
+$('#numeric-input').attr('placeholder','Some Age')
+
+
+//Task 8
+$( 'button' ).click(function() {
+var marker2=L.divIcon({html: '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 136.4 140.9" style="enable-background:new 0 0 136.4 140.9;" xml:space="preserve"><style type="text/css">	.st0{fill:#335388;}</style><polygon class="st0" points="136.4,84.1 91.4,92 72.4,133.4 51.1,93.1 5.8,87.9 37.5,55.1 28.5,10.4 69.5,30.4 109.2,8.1	102.8,53.2 "/></svg>', className: "Jeffrey"});
+// marker2.addTo(map);
+var marker1=L.marker([39.943, -75.16],{icon:marker2})
+marker1.addTo(map);
+marker1.bindPopup('lat:39.943, lng:-75.16')
+})
+// })
+
+// ************** question: why can't pop-up? console shows marker2 is not defined
+
+
+
+//Task 9
+
+
+})
